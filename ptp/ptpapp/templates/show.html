@@ -1,0 +1,39 @@
+
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Startups Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>Startups Name</th>  
+        <th>Startups about</th>  
+        <th>Startups Userid</th>  
+        <th>Startups links</th>  
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for startups in startupss %}  
+    <tr>  
+        <td>{{ startups.name }}</td>  
+        <td>{{ startups.about }}</td>  
+        <td>{{ startups.user_id }}</td>  
+        <td>{{ startups.links }}</td>  
+        <td>  
+            <a href="/edit/{{ statups.startups_id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ statups.startups_id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/emp" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>  
